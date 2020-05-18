@@ -1,0 +1,5 @@
+select * 
+from Sale 
+order by gia asc
+offset 0 rows
+fetch next 4 rows only;
