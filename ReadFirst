@@ -9,3 +9,20 @@ FROM (
 ) T
 WHERE 
     rownum BETWEEN (2) AND (50)
+    
+    
+    
+    
+    
+    SELECT
+    *
+FROM (
+        SELECT      
+            row_number() OVER (ORDER BY (SELECT 1 )) AS [rownum],
+            *
+        FROM
+            mst_kaiin where BirthMM = 5 and BirthYYYY = 2020
+) T
+WHERE 
+    rownum BETWEEN (1) AND (50) 
+    
