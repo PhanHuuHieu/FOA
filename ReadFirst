@@ -1,5 +1,11 @@
-select * 
-from Sale 
-order by gia asc
-offset 0 rows
-fetch next 4 rows only;
+SELECT
+    *
+FROM (
+        SELECT      
+            row_number() OVER (ORDER BY BirthDD DESC) AS [rownum],
+            *
+        FROM
+            mst_kaiin
+) T
+WHERE 
+    rownum BETWEEN (2) AND (50)
