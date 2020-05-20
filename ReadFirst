@@ -26,3 +26,21 @@ FROM (
 WHERE 
     rownum BETWEEN (1) AND (50) 
     
+    
+    ===================
+    
+    <select>
+	<%List<Integer> list = new ArrayList<Integer>();
+			for(int i=1;i<=12;i++)
+				list.add(i);
+		for(int i=0; i< list.size(); i++) {
+	%>
+		<%if(list.get(i)==3) {%>
+			<option value="" selected="selected"><%=list.get(i) %></option>
+			<%} else {%>
+				<option value=""><%=list.get(i) %></option> 
+			<%}} %>
+		
+		} %>
+	</select>
+    
