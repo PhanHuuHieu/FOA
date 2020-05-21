@@ -47,3 +47,17 @@ WHERE
 
 select datepart(mm,mst_kaiin.InsYmd) from mst_kaiin
 
+
+===================================================
+SELECT
+    *
+FROM (
+        SELECT      
+            row_number() OVER (ORDER BY (SELECT 1 )) AS [rownum],
+            *
+        FROM
+            Table_1 where YEAR(Table_1.Date) = 2018 and MONTH(Table_1.Date) = 7
+) T
+WHERE 
+    rownum BETWEEN (1) AND (10) 
+
