@@ -43,4 +43,7 @@ WHERE
 		
 		} %>
 	</select>
-    
+    select datepart(yyyy,mst_kaiin.InsYmd) from mst_kaiin
+
+select datepart(mm,mst_kaiin.InsYmd) from mst_kaiin
+
