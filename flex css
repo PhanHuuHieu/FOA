@@ -39,7 +39,14 @@ html {
 @media screen and (max-width:980px) {
 	.flexbox {flex-wrap:wrap;}
 	.flexbox > div {
-		flex:1 0 100%;
+		flex:3 0 100%;
+		justify-content:center;
+	}
+}
+@media screen and (max-width:980px) {
+	.one {flex-wrap:wrap;}
+	.one > div {
+	
 		justify-content:center;
 	}
 }
