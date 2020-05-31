@@ -1,0 +1,56 @@
+
+package xc.ds;
+
+import java.io.IOException;
+import java.util.Date;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Log2Filter implements Filter {
+
+	private String logFile;
+
+	public Log2Filter() {
+	}
+
+	@Override
+	public void init(FilterConfig fConfig) throws ServletException {
+
+	}
+
+	@Override
+	public void destroy() {
+
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse res = (HttpServletResponse) response;
+		String servletPath = req.getServletPath();
+		System.out.println(req.getContextPath());
+		if (req.getContextPath().equals("/ExaminationOnline")) {
+			chain.doFilter(request, response);
+		}
+		if (req.getSession().getAttribute("username") == null) {
+			res.sendRedirect("login.jsp");
+		} else {
+
+			chain.doFilter(request, response);
+		}
+	}
+
+	private void logToFile(String fileName) { // Ghi log vào file..
+		System.out.println("Write log to file " + fileName);
+	}
+
+}
