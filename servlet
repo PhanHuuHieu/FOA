@@ -1,0 +1,15 @@
+int page = 1;
+		int recordsPerPage = 4;
+		if(request.getParameter("page") != null)
+			page = Integer.parseInt(request.getParameter("page"));
+		UserDAO dao = new UserDAO();
+		List<User> list = dao.viewAllEmployees((page-1)*recordsPerPage,
+								 recordsPerPage);
+		int noOfRecords = dao.getNoOfRecords();
+		int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
+		request.setAttribute("employeeList", list);
+		request.setAttribute("noOfPages", noOfPages);
+		request.setAttribute("currentPage", page);
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).getId());
+		}
