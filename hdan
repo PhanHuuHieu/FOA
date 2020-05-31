@@ -1,0 +1,8 @@
+copy file auth vao window - > systemm 32
+
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		String connectionUrl = "jdbc:sqlserver://localhost;database=customer;integratedSecurity=true;";
+		Connection con = DriverManager.getConnection(connectionUrl);
+		JOptionPane.showMessageDialog(null, "connection ok");
