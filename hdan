@@ -1,5 +1,6 @@
 copy file auth vao window - > systemm 32
 https://stackoverflow.com/questions/44702494/servlet-filter-prevents-css-from-working
+https://stackoverflow.com/questions/48060269/how-to-validate-jsp-with-servlet-and-keep-input-data
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
