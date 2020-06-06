@@ -1,0 +1,1 @@
+select * from Users where password like '%[$f#%$]%' and  'gds@'  not like '%[^a-zA-Z0-9]%'
