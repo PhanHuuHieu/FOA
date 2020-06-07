@@ -1,0 +1,7 @@
+<script type="text/javascript">
+		window.setTimeout(function() {
+			if (document.getElementById("error").innerHTML != null
+					&& document.getElementById("error").innerHTML != "")
+				alert(document.getElementById("error").innerHTML);
+		}, 50);
+	</script>
