@@ -1,1 +1,12 @@
 
+ @Html.TextAreaFor(model => model.AnnouncementContent, new { @id = "FullDescription", @class = "form-control", @name = "texta" })
+                <script>
+                    CKEDITOR.replace('FullDescription').on('contentDom', function () {
+                        CKEDITOR.instances.FullDescription.document.on('keyup', function () {
+                            document.getElementById("submit-data").disabled = false;
+                        });
+                    });              
+                </script>
+                
+                
+                link https://ckeditor.com/old/forums/CKEditor-3.x/Get-key-event-type
