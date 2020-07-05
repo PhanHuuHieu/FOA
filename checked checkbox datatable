@@ -1,0 +1,25 @@
+$(document).ready( function () {
+  var  DT1 = $('#example').DataTable();
+$(".selectAll").on( "click", function(e) {
+    if ($(this).is( ":checked" )) {
+        DT1.rows(  ).select();        
+    } else {
+        DT1.rows(  ).deselect(); 
+    }
+});
+} );
+$(document).ready( function () {
+   var  table = $('#example').DataTable();
+  const a = ["1","23","53"]
+table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+    var d = this.data();
+  if(a.includes(d[3])) {
+    table.rows(rowIdx).select();
+  }
+  
+  
+} );
+ 
+table.draw();
+} ); 
+
